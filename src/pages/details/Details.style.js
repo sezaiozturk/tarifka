@@ -1,0 +1,48 @@
+import { Dimensions, StyleSheet } from "react-native";
+
+export default StyleSheet.create({
+    container:{
+        margin:10,
+        marginBottom:25
+    },
+    image:{
+        width:Dimensions.get('window').width,
+        height:Dimensions.get('window').height/3,
+    },
+    title:{
+        color:'#CF0000',
+        fontWeight:'bold',
+        fontSize:20,
+        marginTop:10,
+        marginLeft:5
+    },
+    subTitle:{
+        color:'#CF0000',
+        fontWeight:'bold',
+        fontSize:15,
+        marginTop:5,
+        marginLeft:5
+    },
+    line:{
+        height:2,
+        backgroundColor:''
+    },
+    innerContainer:{
+        margin:5
+    },
+    description:{
+        fontSize:15
+    },
+    button:{
+        backgroundColor:'red',
+        margin:10,
+        padding:15,
+        alignItems:'center',
+        borderRadius:10
+    },
+    buttonTitle:{
+        fontSize:20,
+        color:'white',
+        fontWeight:'bold'
+    }
+})
