@@ -1,8 +1,10 @@
-import { View, Text, TouchableWithoutFeedback, FlatList } from 'react-native'
+import { View, FlatList, Alert, ActivityIndicator } from 'react-native'
 import React from 'react'
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../hooks/useFetch'
 import styles from './Meals.style'
-import MealsCard from '../../components/MealsCard';
+import MealsCard from '../../components/MealsCard'
+import Lottie from 'lottie-react-native'
+
 
 export default function Meals({navigation,route}) {
   const {foodCategory}=route.params;
@@ -14,6 +16,17 @@ export default function Meals({navigation,route}) {
       foodId={item.idMeal}
       foodImage={item.strMealThumb}
       navigation={navigation}/>
+      
+  if(load){
+    return(
+      <Lottie source={require('../../Lottie/load.json')} autoPlay loop />
+    )
+  }
+  if(error){
+    return(
+      <Lottie source={require('../../Lottie/error.json')} autoPlay loop />
+    )
+  }
   return (
     <View style={styles.container}>
         <FlatList data={data.meals} renderItem={renderMeal}/>

@@ -2,6 +2,7 @@ import { View, Text, FlatList ,ScrollView,Image,TouchableOpacity,ActivityIndicat
 import React from 'react'
 import useFetch from '../../hooks/useFetch'
 import styles from './Details.style'
+import Lottie from 'lottie-react-native'
 
 export default function Details({route}) {
   const {foodId}=route.params;
@@ -9,8 +10,15 @@ export default function Details({route}) {
   const{data,load,error}=useFetch(URL);
   const detail=data.meals;
 
-  if (load) {
-    return <ActivityIndicator size={'large'} />;
+  if(load){
+    return(
+      <Lottie source={require('../../Lottie/load.json')} autoPlay loop />
+    )
+  }
+  if(error){
+    return(
+      <Lottie source={require('../../Lottie/error.json')} autoPlay loop />
+    )
   }
 
   async function handleOpenYoutube(){

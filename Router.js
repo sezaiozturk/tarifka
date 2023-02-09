@@ -9,10 +9,10 @@ export default function Router() {
   const Stack=createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='CategoriesScreen' component={categories}/>
-        <Stack.Screen name='MealsScreen' component={meals}/>
-        <Stack.Screen name='DetailsScreen' component={details}/>
+      <Stack.Navigator screenOptions={{headerTintColor:'orange'}}>
+        <Stack.Screen name='CategoriesScreen' component={categories} options={{headerTitle:'Categories'}}/>
+        <Stack.Screen name='MealsScreen' component={meals} options={{headerTitle:'Meals'}}/>
+        <Stack.Screen name='DetailsScreen' component={details} options={{headerTitle:'Detail'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
